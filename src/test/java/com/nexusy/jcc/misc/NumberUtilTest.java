@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 public class NumberUtilTest {
 
     @Test
-    public void test() {
+    void test() {
         Assertions.assertTrue(NumberUtil.toPositiveNumber(Integer.MIN_VALUE) >= 0);
         Assertions.assertTrue(NumberUtil.toPositiveNumber(Integer.MAX_VALUE) >= 0);
         Assertions.assertTrue(NumberUtil.toPositiveNumber(0) >= 0);
