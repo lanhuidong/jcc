@@ -4,6 +4,7 @@ import com.nexusy.jcc.exception.ResourceNotFoundException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.io.InputStream;
 import java.util.HashSet;
 import java.util.Set;
@@ -55,6 +56,15 @@ public class IOUtilTest {
         byte[] data = IOUtil.streamToBytes(is);
         Assertions.assertNotNull(data);
         Assertions.assertEquals(29252, data.length);
+    }
+
+    @Test
+    void testCopyFile() {
+        IOUtil.copyFile("LICENSE", "LICENSE.bak");
+        int sourceFileLength = IOUtil.fileToBytes("LICENSE").length;
+        int copyFileLength = IOUtil.fileToBytes("LICENSE.bak").length;
+        Assertions.assertEquals(sourceFileLength, copyFileLength);
+        Assertions.assertTrue(new File("LICENSE.bak").delete());
     }
 
 }

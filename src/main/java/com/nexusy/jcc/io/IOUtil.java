@@ -3,6 +3,7 @@ package com.nexusy.jcc.io;
 import com.nexusy.jcc.exception.ResourceNotFoundException;
 
 import java.io.*;
+import java.nio.channels.FileChannel;
 import java.util.function.Consumer;
 
 /**
@@ -76,6 +77,21 @@ public final class IOUtil {
         int len;
         while ((len = is.read(buf)) != -1) {
             baos.write(buf, 0, len);
+        }
+    }
+
+    public static void copyFile(String srcFile, String destFile) {
+        copyFile(new File(srcFile), new File(destFile));
+    }
+
+    public static void copyFile(File srcFile, File destFile) {
+        try (FileChannel srcChannel = new FileInputStream(srcFile).getChannel();
+             FileChannel destChannel = new FileOutputStream(destFile).getChannel()) {
+            destChannel.transferFrom(srcChannel, 0, srcChannel.size());
+        } catch (FileNotFoundException e) {
+            throw new com.nexusy.jcc.exception.FileNotFoundException(e);
+        } catch (IOException e) {
+            throw new com.nexusy.jcc.exception.IOException(e);
         }
     }
 
