@@ -19,12 +19,15 @@ public final class FileUtil {
         if (dir == null) {
             return false;
         }
-        for (File file : dir.listFiles()) {
-            if (file.isDirectory()) {
-                deleteDirs(file);
-            } else {
-                if (!file.delete()) {
-                    return false;
+        File[] files = dir.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    deleteDirs(file);
+                } else {
+                    if (!file.delete()) {
+                        return false;
+                    }
                 }
             }
         }
