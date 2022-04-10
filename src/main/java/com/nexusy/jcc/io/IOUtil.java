@@ -62,6 +62,20 @@ public final class IOUtil {
         }
     }
 
+    public static void bytesToFile(byte[] data, String fileName) {
+        bytesToFile(data, new File(fileName));
+    }
+
+    public static void bytesToFile(byte[] data, File file) {
+        try (BufferedOutputStream baos = new BufferedOutputStream(new FileOutputStream(file))) {
+            baos.write(data);
+        } catch (FileNotFoundException e) {
+            throw new com.nexusy.jcc.exception.FileNotFoundException(e);
+        } catch (IOException e) {
+            throw new com.nexusy.jcc.exception.IOException(e);
+        }
+    }
+
     public static byte[] streamToBytes(InputStream stream) {
         try (InputStream is = stream;
              ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
