@@ -1,5 +1,7 @@
-# jcc
-一些常用的Java代码
+# jcc(Java Code Collector)
+
+- 收集常用的Java代码
+- 除了JDK外不依赖其他Java库
 
 # Maven依赖
 
