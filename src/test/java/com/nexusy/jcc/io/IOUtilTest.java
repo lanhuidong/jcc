@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.InputStream;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 
 /**
@@ -28,19 +28,39 @@ public class IOUtilTest {
         Assertions.assertEquals(29252, data.length);
     }
 
-    private Set<String> line;
+    private List<String> line;
 
     private final Consumer<String> linesConsumer = line -> this.line.add(line);
 
     @Test
     void testProcessResourcePerLine() {
-        line = new HashSet<>();
+        line = new ArrayList<>();
         IOUtil.processResourcePerLine("feihua.txt", linesConsumer);
         Assertions.assertEquals(3, line.size());
         for (String liftNo : line) {
             System.out.println(liftNo);
         }
         line = null;
+    }
+
+    @Test
+    void testProcessFilePerLine() {
+        line = new ArrayList<>();
+        IOUtil.processFilePerLine(new File("src/test/resources/profile.gz"), linesConsumer);
+        for (String liftNo : line) {
+            System.out.println(liftNo);
+        }
+        line.clear();
+        IOUtil.processFilePerLine(new File("src/test/resources/feihua.txt.zip"), linesConsumer);
+        for (String liftNo : line) {
+            System.out.println(liftNo);
+        }
+        line.clear();
+        IOUtil.processFilePerLine(new File("src/test/resources/feihua.txt"), linesConsumer);
+        for (String liftNo : line) {
+            System.out.println(liftNo);
+        }
+        line.clear();
     }
 
     @Test
