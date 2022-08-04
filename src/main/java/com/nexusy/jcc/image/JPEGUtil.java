@@ -24,6 +24,9 @@ public final class JPEGUtil {
 
     /**
      * 参考资料：<a href="https://blog.csdn.net/yangysng07/article/details/9025443?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_baidulandingword-4&spm=1001.2101.3001.4242">...</a>
+     *
+     * @param data 图片二进制数据
+     * @return 图片元数据
      */
     public static Meta getMeta(final byte[] data) {
         int width = 0;
