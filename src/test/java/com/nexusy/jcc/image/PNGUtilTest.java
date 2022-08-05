@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 public class PNGUtilTest {
 
     @Test
-    public void testGetMeta() {
+    void testGetMeta() {
         Meta meta = PNGUtil.getMeta(IOUtil.getResourceAsBytes("vim-go.png"));
         Assertions.assertEquals(320, meta.getWidth());
         Assertions.assertEquals(272, meta.getHeight());

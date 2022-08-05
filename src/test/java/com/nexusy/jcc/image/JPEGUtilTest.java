@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 public class JPEGUtilTest {
 
     @Test
-    public void testGetMeta() {
+    void testGetMeta() {
         Meta meta = JPEGUtil.getMeta(IOUtil.getResourceAsBytes("golang.jpeg"));
         Assertions.assertEquals(600, meta.getWidth());
         Assertions.assertEquals(600, meta.getHeight());
