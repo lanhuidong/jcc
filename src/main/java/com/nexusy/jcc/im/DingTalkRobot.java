@@ -75,9 +75,9 @@ public class DingTalkRobot {
         if (endIndex == -1) {
             endIndex = text.indexOf("}", startIndex);
         }
-        String result = text.substring(startIndex + 10, endIndex);
-        if (result.endsWith("\"")) {
-            result = result.substring(0, result.length() - 1);
+        String result = text.substring(startIndex + key.length() + 3, endIndex);
+        if (result.startsWith("\"")) {
+            result = result.substring(1, result.length() - 1);
         }
         return result;
     }
