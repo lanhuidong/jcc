@@ -5,7 +5,7 @@
 
     <groupId>com.nexusy</groupId>
     <artifactId>jcc</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
 
     <name>jcc</name>
     <description>一些常用的Java代码</description>
