@@ -23,7 +23,7 @@ public class KeyedEventLoopGroup implements AutoCloseable {
     }
 
     public Future<?> submit(String key, Runnable task) {
-        int index = NumberUtil.toPositiveNumber(key.hashCode()) % loopNum;
+        int index = NumberUtil.toNonNegative(key.hashCode()) % loopNum;
         return loops[index].submit(task);
     }
 

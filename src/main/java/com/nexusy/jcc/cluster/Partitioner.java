@@ -18,7 +18,7 @@ public final class Partitioner {
         if (key == null) {
             return 0;
         }
-        return NumberUtil.toPositiveNumber(key.hashCode()) % total;
+        return NumberUtil.toNonNegative(key.hashCode()) % total;
     }
 
 }
