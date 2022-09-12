@@ -17,6 +17,7 @@ public final class IOUtil {
     private static final int BUFFER_SIZE = 4096;
 
     private IOUtil() {
+        throw new AssertionError();
     }
 
     public static byte[] getResourceAsBytes(String resourceName) {

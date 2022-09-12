@@ -16,6 +16,7 @@ public final class Arrays {
     public static final String[] EMPTY_STRINGS = {};
 
     private Arrays() {
+        throw new AssertionError();
     }
 
     public static int[] ofInts(int... elements) {

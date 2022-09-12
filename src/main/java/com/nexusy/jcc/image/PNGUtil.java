@@ -7,6 +7,7 @@ package com.nexusy.jcc.image;
 public class PNGUtil {
 
     private PNGUtil() {
+        throw new AssertionError();
     }
 
     /**

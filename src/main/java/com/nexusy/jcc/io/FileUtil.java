@@ -9,6 +9,7 @@ import java.io.File;
 public final class FileUtil {
 
     private FileUtil() {
+        throw new AssertionError();
     }
 
     public static boolean deleteDirs(String dirName) {

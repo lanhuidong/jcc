@@ -20,6 +20,7 @@ public final class JPEGUtil {
     public static final int IMAGE_HEIGHT_LOW_OFFSET = 6;
 
     private JPEGUtil() {
+        throw new AssertionError();
     }
 
     /**

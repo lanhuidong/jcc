@@ -4,7 +4,11 @@ package com.nexusy.jcc.misc;
  * @author lanhuidong
  * @since 2022-02-18
  */
-public class NumberUtil {
+public final class NumberUtil {
+
+    private NumberUtil() {
+        throw new AssertionError();
+    }
 
     /**
      * 该方法主要是为了处理Integer.MIN_VALUE=-Integer.MIN_VALUE的问题

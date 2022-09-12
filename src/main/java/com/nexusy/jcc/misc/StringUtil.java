@@ -7,6 +7,7 @@ package com.nexusy.jcc.misc;
 public final class StringUtil {
 
     private StringUtil() {
+        throw new AssertionError();
     }
 
     public static <T> String join(CharSequence delimiter, T[] element) {

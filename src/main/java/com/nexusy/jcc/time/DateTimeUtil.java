@@ -9,7 +9,11 @@ import java.util.Locale;
  * @author lanhuidong
  * @since 2022-02-18
  */
-public class DateTimeUtil {
+public final class DateTimeUtil {
+
+    private DateTimeUtil() {
+        throw new AssertionError();
+    }
 
     public static final DateTimeFormatter HTTP_GMT_FORMATTER = DateTimeFormatter.ofPattern("EEE, dd MMM yyyy HH:mm:ss 'GMT'", Locale.US);
 

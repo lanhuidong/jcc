@@ -9,6 +9,7 @@ import com.nexusy.jcc.misc.NumberUtil;
 public final class Partitioner {
 
     private Partitioner() {
+        throw new AssertionError();
     }
 
     public static int partition(String key, int total) {

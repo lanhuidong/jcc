@@ -23,6 +23,7 @@ public final class SignUtil {
         'a', 'b', 'c', 'd', 'e', 'f'};
 
     private SignUtil() {
+        throw new AssertionError();
     }
 
     public static String bytesToHexString(byte[] bytes) {

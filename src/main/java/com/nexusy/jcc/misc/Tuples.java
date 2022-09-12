@@ -7,6 +7,7 @@ package com.nexusy.jcc.misc;
 public final class Tuples {
 
     private Tuples() {
+        throw new AssertionError();
     }
 
     public static <T1> Tuple1<T1> of(T1 f1) {
