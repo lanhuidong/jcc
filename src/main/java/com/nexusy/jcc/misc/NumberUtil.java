@@ -15,7 +15,7 @@ public final class NumberUtil {
      *
      * @param number 原数字
      * @return 返回非负数
-     * @see #toNonNegative(int)
+     * @deprecated After v1.2.0, replaced by {@link #toNonNegative(int)}
      */
     @Deprecated
     public static int toPositiveNumber(int number) {
@@ -33,7 +33,7 @@ public final class NumberUtil {
      *
      * @param number 原数字
      * @return 返回非负数
-     * @see #toNonNegative(long)
+     * @deprecated After v1.2.0, replaced by {@link #toNonNegative(long)}
      */
     @Deprecated
     public static long toPositiveNumber(long number) {
